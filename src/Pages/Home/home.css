@@ -1,0 +1,10 @@
+.line{
+    padding: 0.2%;
+    border: 2px solid black;
+    background-color: black;
+    margin-top: 2%;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
