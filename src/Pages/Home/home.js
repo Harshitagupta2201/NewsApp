@@ -5,7 +5,7 @@ import Body from "../../components/Body/Body";
 
 const Home = () => {
   return (
-    <div>
+    <div className="home">
       <div className="container">
         <div>
           {" "}
