@@ -6,15 +6,12 @@ import Body from "../../components/Body/Body";
 const Home = () => {
   return (
     <div className="home">
-      <div className="container">
-        <div>
-          {" "}
-          <Navbar />
-        </div>
-        <div className="line"></div>
-        <div>
-          <Body />
-        </div>
+      <div>
+        <Navbar />
+      </div>
+      <div className="line"></div>
+      <div className="body">
+        <Body />
       </div>
     </div>
   );

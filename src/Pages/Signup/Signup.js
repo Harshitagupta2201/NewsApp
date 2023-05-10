@@ -1,20 +1,19 @@
 import React from "react";
-import "./login.css";
-import { useNavigate } from "react-router-dom";
+import "./signup.css";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Signup = () => {
   const navigate = useNavigate();
-  const [data, setdata] = useState({});
-  const handleclick = () => {
-    navigate("/signup");
-  };
-  const handlechange = (event) => {
-    console.log(event);
-    data[event.target.name] = event.target.value;
-    setdata({ ...data });
-  };
-  console.log(data);
+  const [input, setinput] = useState({});
+  function handlechange(event) {
+    input[event.target.name] = event.target.value;
+    setinput({ ...input });
+  }
+  function handleclick() {
+    localStorage.setItem("user", input);
+    navigate("/");
+  }
   return (
     <div className="form">
       <div className="image">
@@ -24,39 +23,43 @@ const Login = () => {
         />
       </div>
       <div>
-        <h1>Let's Login! </h1>
+        <h1>Signup Here! </h1>
       </div>
       <div>
         <form className="container">
+          <label>Enter your full name:</label>
+          <input
+            type="text"
+            placeholder="Full Name"
+            required
+            onChange={handlechange}
+            name="name"
+          />
+          <label>Enter your Email-address:</label>
           <input
             type="email"
             placeholder="Email Address"
-            name="email"
             required
             onChange={handlechange}
+            name="email"
           />
+          <label>Enter the password:</label>
           <input
             type="password"
             placeholder="Password"
-            name="password"
             required
             onChange={handlechange}
+            name="password"
           />
         </form>
       </div>
-      <div className="login">
-        <button type="button" class="btn btn-primary">
-          Login
-        </button>
-      </div>
-      <div className="createaccount">
-        <div>Create an account if you don't have one:</div>
+      <div className="signup">
         <button type="button" class="btn btn-primary" onClick={handleclick}>
-          Sign Up
+          Signup
         </button>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default Signup;
