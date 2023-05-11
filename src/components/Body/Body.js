@@ -26,12 +26,14 @@ const Body = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Featured Articles!</h1>
-      <Featured data={data} />
-      <div className="line"></div>
-      <h1>More Articles!</h1>
-      <More articles={articles} />
+    <div className="body">
+      <div>
+        <h1>Featured Articles!</h1>
+        <Featured data={data} />
+        <div className="line"></div>
+        <h1>More Articles!</h1>
+        <More articles={articles} />
+      </div>
     </div>
   );
 };
