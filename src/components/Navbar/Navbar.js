@@ -1,7 +1,17 @@
 import React from "react";
 import "./navbar.css";
+import { GrLogout } from "react-icons/gr";
+import { signOut } from "firebase/auth";
+import { auth } from "../../firebase";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const Logout = () => {
+    signOut(auth);
+    alert("Logged out");
+    navigate("/");
+  };
   return (
     <div>
       <div className="left">
@@ -21,6 +31,7 @@ const Navbar = () => {
         <img src="https://img.icons8.com/?size=1x&id=437&format=png" alt="" />
         <img src="https://img.icons8.com/?size=1x&id=32292&format=png" alt="" />
         <img src="https://img.icons8.com/?size=1x&id=53372&format=png" alt="" />
+        <GrLogout onClick={Logout} />
       </div>
     </div>
   );

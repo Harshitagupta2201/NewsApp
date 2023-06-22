@@ -1,20 +1,23 @@
 import React from "react";
 import "./home.css";
 import Navbar from "../../components/Navbar/Navbar";
-import Body from "../../components/Body/Body";
-
-const Home = () => {
+import Featured from "../../components/Featured/Featured";
+import More from "../../components/Morearticles/More";
+function Home() {
   return (
     <div className="home">
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
+
       <div className="line"></div>
-      <div className="body">
-        <Body />
-      </div>
+      <h1 style={{ color: "black", paddingTop: "10px" }}>
+        {" "}
+        Featured Articles!
+      </h1>
+      <Featured />
+      <h1 style={{ color: "black", paddingTop: "20px" }}> Latest Articles!</h1>
+      <More />
     </div>
   );
-};
+}
 
 export default Home;
